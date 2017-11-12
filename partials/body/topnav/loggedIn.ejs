@@ -1,0 +1,13 @@
+<div class="navbar-default nav navbar navbar-static-bottom" id="top_nav" ng-controller="LogoutController as logoutCtrl">
+    <a class="navbar-brand" href="/">Sensors</a>
+    <ul class=" navbar-nav nav navbar-right">
+        <li class="dropdown">
+            <a href="/" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ user.first_name }} <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="/account/profile">View Profile</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a ng-click="logoutCtrl.logout()" href="/auth/logout">Logout</a></li>
+             </ul>
+        </li>
+    </ul>
+</div>

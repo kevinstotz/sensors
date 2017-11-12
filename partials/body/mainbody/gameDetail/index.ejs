@@ -1,0 +1,29 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 col-sm-8 col-xs-12">
+
+            <div ng-if="gameDetailCtrl.userid==gameDetailCtrl.game.owner.id">
+                <game-detail-form></game-detail-form>
+            </div>
+            <div ng-if="gameDetailCtrl.userid!=gameDetailCtrl.game.owner.id">
+                <game-detail-view game="gameDetailCtrl.game"></game-detail-view>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <game-update-button ng-if="gameDetailCtrl.userid==gameDetailCtrl.game.owner.id" game="gameDetailCtrl.game" ></game-update-button>
+            <br />
+            <game-start-button  ng-if="( (gameDetailCtrl.game.status.id==505 || gameDetailCtrl.game.status.id==507) && (gameDetailCtrl.userid==gameDetailCtrl.game.owner.id) )" gameid="gameDetailCtrl.game.id"></game-start-button>
+            <br />
+            <game-delete-button ng-if="gameDetailCtrl.userid==gameDetailCtrl.game.owner.id" gameid="gameDetailCtrl.game.id"></game-delete-button>
+            <br />
+            <game-leave-button userid="gameDetailCtrl.userid" gameplayerid="gameDetailCtrl.game.groups[0].players" gameid="gameDetailCtrl.game.id"></game-leave-button>
+            <game-join-button  userid="gameDetailCtrl.userid" gameplayerid="gameDetailCtrl.game.groups[0].players" gameid="gameDetailCtrl.game.id"></game-join-button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <game-round-table userid="gameDetailCtrl.userid" gameid="gameDetailCtrl.game.id" rounds="gameDetailCtrl.game.rounds"></game-round-table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div>
+    <table class="table table-hover table-responsive" ng-repeat="round in rounds">
+        <thead>
+            <tr>
+                <th>Number</th>
+                <th>Name</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Speed</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{round.id}}</td>
+                <td>{{round.name}}</td>
+                <td>{{round.startTime | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                <td>{{round.endTime | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                <td>{{round.speed.name}}</td>
+                <td>{{round.status.status}}</td>
+            </tr>
+            <tr>
+                <td colspan="6">
+                    <game-turn-table userid="userid" turn="round.turnRound"></game-turn-table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

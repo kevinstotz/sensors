@@ -1,0 +1,33 @@
+<script src="/static/js/jquery/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script src="/static/js/bootstrap/bootstrap.js" type="text/javascript"></script>
+<script src="/static/js/bootstrap/bootstrapValidator.js" type="text/javascript"></script>
+
+
+<script src="/static/js/angular/angular.js" type="text/javascript"></script>
+<script src="/static/js/angular/angular-animate.js" type="text/javascript"></script>
+<script src="/static/js/angular/angular-ui-router.js" type="text/javascript"></script>
+<script src="/static/js/angular/angular-cookies.js" type="text/javascript"></script>
+<script src="/static/js/angular/angular-resource.js" type="text/javascript"></script>
+<script src="/static/js/angular/angular-filter.js" type="text/javascript"></script>
+<script src="/static/js/d3/d3.v3.min.js" type="text/javascript"></script>
+<script src="/static/js/d3/rickshaw/rickshaw.min.js" type="text/javascript"></script>
+<script src="/static/js/app/app.js" type="text/javascript"></script>
+<script src="/static/js/app/directives/speedlist.js" type="text/javascript"></script>
+<script src="/static/js/app/directives/countdown.js" type="text/javascript"></script>
+<script src="/static/js/app/controllers/mainController.js" type="text/javascript"></script>
+<script src="/static/js/app/controllers/login/login.js" type="text/javascript"></script>
+<script src="/static/js/app/controllers/logout/logout.js" type="text/javascript"></script>
+<script src="/static/js/app/controllers/register/register.js" type="text/javascript"></script>
+
+<script src="/static/js/app/services/token/token.service.js" type="text/javascript"></script>
+<script src="/static/js/app/services/auth/auth.service.js" type="text/javascript"></script>
+<script src="/static/js/app/services/forgotpassword/forgotPassword.service.js" type="text/javascript"></script>
+
+<script src="/static/js/app/services/register/register.service.js" type="text/javascript"></script>
+<script src="/static/js/app/services/api/API.service.js" type="text/javascript"></script>
+<script src="/static/js/app/services/cookie/cookie.service.js" type="text/javascript"></script>
+
+
+<% if (authenticated) { %>
+    <%- include loggedIn.ejs %>
+<% }  %>

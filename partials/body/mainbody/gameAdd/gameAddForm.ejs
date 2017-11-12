@@ -1,0 +1,35 @@
+<div class="col-md-4 col-sm-4 col-xs-12">
+  <form class="form-horizontal" name="newGameForm" ng-submit="gameAddCtrl.addGame(gameAddCtrl.game)" role="newGameForm">
+    <div class="form-group" ss="{ 'has-error': newGameForm.name.$dirty && newGameForm.name.$error.required }">
+        <div>
+            <label for="gameAddCtrl.game.name">Game Name</label>
+            <input
+                type="text"
+                id="gameAddCtrl.game.name"
+                class="form-control"
+                ng-model="gameAddCtrl.game.name"
+                required />
+            <div ng-show=(0==1)>Enter name</div>
+        </div>
+        <div class="form-group">
+            <label>Select Speed</label>
+            <select ng-model="gameAddCtrl.game.speed"
+                    ng-options="speed.id as speed.name for speed in gameAddCtrl.speedList">
+
+            </select>
+        </div>
+        <div class="checkbox form-group">
+            <label>
+                <input
+                    ng-model="gameAddCtrl.game.progressive"
+                    name="gameAddCtrl.game.progressive"
+                    type="checkbox" />Progressive
+            </label>
+        </div>
+    </div>
+    <game-add-button></game-add-button>
+</form>
+</div>
+<div class="col-md-8 col-sm-8 col-xs-12">
+
+</div>

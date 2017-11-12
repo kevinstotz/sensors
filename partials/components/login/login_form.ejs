@@ -1,0 +1,122 @@
+<div class="container-fluid" data-ng-controller="LoginController as loginCtrl">
+    <div class="row"><span style="height: 20px;">{{loginCtrl.messages}}</span></div>
+    <div class="row">
+        <form id="loginform"
+              name="loginform"
+              ng-submit="loginCtrl.login(credentials)"
+              role="form"
+              style="display: block;">
+            <div class="form-group">
+                <input type="email"
+                       maxlength="100"
+                       data-minlength="6"
+                       minlength="6"
+                       ng-model="credentials.Email"
+                       name="Email"
+                       required
+                       id="Email"
+                       tabindex="1"
+                       class="form-control"
+                       placeholder="Email"
+                       value="">
+            </div>
+            <div class="form-group">
+                <input type="password"
+                       maxlength="30"
+                       data-minlength="6"
+                       data-error="fff"
+                       minlength="6"
+                       ng-model="credentials.Password"
+                       name="Password"
+                       id="password"
+                       tabindex="2"
+                       class="form-control"
+                       required
+                       placeholder="Password">
+            </div>
+            <div class="form-group text-center">
+                <input type="checkbox"
+                       tabindex="3"
+                       ng-model="credentials.remember"
+                       class=""
+                       name="remember"
+                       id="remember">
+                <label for="remember">Remember Me</label>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3">
+                        <input type="submit"
+                            name="login-submit"
+                            id="login-submit"
+                            tabindex="4"
+                            class="form-control btn btn-login"
+                            value="Log In">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-center">
+                            <a href="#" data-target="#pwdModal" data-toggle="modal">forgot password?</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <!--modal-->
+     <div id="pwdModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+       <div class="modal-dialog">
+       <div class="modal-content">
+           <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+               <h1 class="text-center">What's My Password?</h1>
+           </div>
+           <div class="modal-body">
+               <div class="col-md-12">
+                     <div class="panel panel-default">
+                         <div class="panel-body">
+                             <div class="text-center">
+                               <p>If you have forgotten your password you can reset it here.</p>
+                               <div class="row"><span style="height: 20px;">{{loginCtrl.forgotPasswordMessage}}</span></div>
+                               <div class="row"><span style="height: 20px;">{{loginCtrl.messages}}</span></div>
+                                 <div class="panel-body">
+
+                                     <form id="forgotPasswordForm"
+                                           name="forgotPasswordForm"
+                                           ng-submit="loginCtrl.forgotPassword(forgotEmail)"
+                                           role="form"
+                                           style="display: block;">
+                                           <div class="form-group">
+                                               <input type="email"
+                                                      id="forgotEmail"
+                                                      maxlength="100"
+                                                      class="form-control input-lg"
+                                                      placeholder="Email"
+                                                      ng-model="forgotEmail"
+                                                      name="forgotEmail" >
+                                            </div>
+                                            <input class="form-group btn btn-lg btn-primary btn-block"
+                                                   value="Send My Password"
+                                                   type="submit">
+                                     </form>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+           </div>
+           <div class="modal-footer">
+               <div class="col-md-12">
+               <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+     		  </div>
+           </div>
+       </div>
+       </div>
+     </div>
+</div>

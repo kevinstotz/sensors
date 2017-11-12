@@ -1,0 +1,17 @@
+<div class="btn-group">
+    <button class="btn btn-danger" data-toggle="modal" data-target="#gameDeleteModal">Delete</button>
+</div>
+
+<div class="modal" id="gameDeleteModal" tabindex="-1" role="dialog" aria-labelledby="gameDeleteModalLabel">
+   <div class="modal-dialog modal-sm" role="document">
+       <div class="modal-content">
+           <div class="modal-body">
+               You are deleting: <p>{{gameid}}</p>
+           </div>
+           <div class="modal-footer">
+               <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+               <button type="button" class="btn btn-primary" data-dismiss="modal" data-ng-click="gameDeleteCtrl.deleteGame(gameid)">Delete Game</button>
+           </div>
+       </xdiv>
+   </div>
+</div>

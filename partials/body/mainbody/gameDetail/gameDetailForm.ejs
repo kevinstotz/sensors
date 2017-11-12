@@ -1,0 +1,13 @@
+<form method="post" name="gameDetailCtrl.detailForm">
+     <div class="form-group">
+         <label class="control-label" for="name">Name</label>
+         <input class="form-control" id="name" ng-model="gameDetailCtrl.game.name" name="name" placeholder="" type="text"/>
+         <div class="checkbox">
+             <label class="control-label" for="progressive">
+                 <input ng-model="gameDetailCtrl.game.progressive" type="checkbox" name="progressive" ng-checked="gameDetailCtrl.game.progressive" >
+                 Progressive
+             </label>
+         </div>
+         <speed-list-control choice="gameDetailCtrl.game.speed"></speed-list-control>
+     </div>
+</form>

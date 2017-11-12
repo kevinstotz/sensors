@@ -1,0 +1,31 @@
+<body ng-controller="MainController as mainCtrl" ng-strict-di>
+    <div class="container-fluid">
+         <div class="row">
+             <div class="col-lg-12 col-md-12 col-sm-12" >
+                    <% include topnav/topnav.ejs %>
+             </div>
+         </div>
+
+         <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-2" ui-view="leftSide">
+                <% include leftnav/leftnav.ejs %>
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8" id="centerBody">
+                <div ui-view="centerBody">
+                    <% include mainbody/mainbody.ejs %>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2" ui-view="rightSide">
+                <% include rightnav/rightnav.ejs %>
+            </div>
+         </div>
+
+         <div class="row">
+             <div class="col-lg-12 col-md-12 col-sm-12 ">
+                <div class="navbar-default nav navbar navbar-static-bottom" id="footer">
+                    <% include foot/foot.ejs %>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

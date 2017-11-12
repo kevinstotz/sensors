@@ -1,0 +1,8 @@
+
+<li data-ng-repeat="gameIPlay in gamesIPlayCtrl.gamesIPlayList">
+    <span>
+        <img src="/static/images/playing.png" ng-if="gameIPlay.player_id>0" alt="Games I am Playing" style="width:15px;height:15px;" />
+        <img src="/static/images/owner.png" ng-if="gameIPlay.owner_id==1" alt="Games I Own" style="width:15px;height:15px;" />
+        <a data-ui-sref="init.gameDetail({id: gameIPlay.game_id})">{{gameIPlay.game_name}}</a>
+    </span>
+</li>

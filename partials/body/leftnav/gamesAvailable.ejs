@@ -1,0 +1,6 @@
+<li data-ng-repeat="gameAvailable in gamesAvailableCtrl.gamesAvailableList">
+    <span>
+        <img src="/static/images/public.png" alt="Games available to Play" style="width:15px;height:15px;"/>
+        <a data-ui-sref="init.gameView({id: gameAvailable.game_id})">{{gameAvailable.game_name}}</a>
+    </span>
+</li>

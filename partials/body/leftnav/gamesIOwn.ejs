@@ -1,0 +1,7 @@
+
+<li data-ng-repeat="gameIOwn in gamesIOwnCtrl.gamesIOwnList">
+    <span>
+        <img src="/static/images/owner.png" alt="Games I created" style="width:15px;height:15px;" />
+        <a data-ui-sref="init.gameDetail({id: gameIOwn.id})">{{gameIOwn.name}}</a>
+    </span>
+</li>

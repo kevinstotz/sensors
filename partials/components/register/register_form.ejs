@@ -1,0 +1,60 @@
+<div class="container-fluid" data-ng-controller="RegisterController as registerCtrl">
+    <form id="register-form" ng-submit="registerCtrl.register(credentials)" data-toggle="validator" role="form" style="display: none;">
+         <div class="form-group">
+            <input type="text"
+                   maxlength="50"
+                   minlength="3"
+                   data-minlength="3"
+                   ng-model="credentials.First_Name"
+                   name="firstName"
+                   id="firstName"
+                   tabindex="1"
+                   class="form-control"
+                   placeholder="First Name"
+                   required>
+        </div>
+        <div class="form-group">
+            <input type="text"
+                   maxlength="50"
+                   minlength="3"
+                   data-minlength="3"
+                   ng-model="credentials.Last_Name"
+                   name="lastName"
+                   id="lastName"
+                   tabindex="2"
+                   class="form-control"
+                   placeholder="Last Name"
+                   required>
+        </div>
+       <div class="form-group">
+            <input type="email"
+                   maxlength="100
+                   minlength="3"
+                   data-minlength="6"
+                   ng-model="credentials.Email"
+                   name="email"
+                   id="email"
+                   tabindex="3"
+                   class="form-control"
+                   placeholder="Email"
+                   value=""
+                   username-available
+                   required>
+        </div>
+        <div class="help-block with-errors"></div>
+        <div ng-if="register-form.$pending.usernameExists">checking....</div>
+        <div ng-if="register-form.$error.usernameExists">Email already exists.</div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <input type="submit"
+                           name="register-submit"
+                           id="register-submit"
+                           tabindex="4"
+                           class="form-control btn btn-register"
+                           value="Register">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
