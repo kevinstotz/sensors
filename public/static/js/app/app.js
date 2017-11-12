@@ -1,8 +1,8 @@
 'use strict';
 var API_BASEURI = '/SES';
 var API_VERSION = '/v1';
-var SITE_URL = 'http://www.localhost.com:3000'
-var ENGINE_URL = 'http://www.reddwarf.com:8000'
+var SITE_URL = 'http://www.yogishouse.com:49160'
+var ENGINE_URL = 'http://api.yogishouse.com:8080'
 var hotPotatoEngineApp = angular.module('hotPotatoEngineApp', [ 'ngAnimate', 'ui.router', 'ngResource', 'angular.filter', 'ngCookies',] );
 angular.module('hotPotatoEngineApp.controllers', []);
 
