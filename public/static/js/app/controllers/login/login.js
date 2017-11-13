@@ -4,6 +4,7 @@ hotPotatoEngineApp.controller('LoginController', [ '$window', 'AuthService', 'Fo
     function($window, authService, forgotPasswordService) {
         var loginCtrl = this;
         loginCtrl.login = login;
+        loginCtrl.message = "";
         loginCtrl.forgotPassword = forgotPassword;
 
         (function initController() {
@@ -13,19 +14,21 @@ hotPotatoEngineApp.controller('LoginController', [ '$window', 'AuthService', 'Fo
 
         function login(credentials) {
             var x = authService.login(credentials).$promise.then(function (res) {
-                console.log(res);
+                loginCtrl.message = "";
                 switch(res.status) {
                     case '0':
                     window.location.href = '/sensors';
                         break;
                     case 'Failed':
-                        loginCtrl.messages = res.reason;
+                        loginCtrl.messages = res.message;
                         break;
-                    case 'Not Found':
-                        loginCtrl.messages = res.reason;
+                    case '1':
+                    case 1:
+                        loginCtrl.messages = res.message;
+                        console.log(res.message);
                         break;
                     default:
-                        loginCtrl.messages = res.reason;
+                        loginCtrl.messages = res.message;
                 }
             });
         };
@@ -58,15 +61,15 @@ $(function() {
 		$('#register-form-link').removeClass('active');
 		$(this).addClass('active');
 		e.preventDefault();
-	});
+    });
 
-	$('#register-form-link').click(function(e) {
+    $('#register-form-link').click(function(e) {
 		$("#register-form").delay(100).fadeIn(100);
  		$("#loginform").fadeOut(100);
 		$('#login-form-link').removeClass('active');
 		$(this).addClass('active');
 		e.preventDefault();
-	});
+    });
 
     $('#register-form-link-header').click(function(e) {
 		$("#register-form").delay(100).fadeIn(100);

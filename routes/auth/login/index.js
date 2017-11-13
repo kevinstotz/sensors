@@ -4,7 +4,6 @@ var request = require('request');
 var basePath = path.join(__dirname, '../../..');
 
 router.get('/', function(req, res, next) {
-    console.log("get login" + req);
     res.render('pages/authenticate/login/login', {basePath:basePath, authenticated:false});
 });
 

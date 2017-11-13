@@ -29,6 +29,7 @@ hotPotatoEngineApp.service('AuthService', ['$resource', '$window', '$location', 
                         default:
                             clearCredentials();
                             console.log("error logging in:" + obj.status + obj.message);
+                            return obj;
                     }
                 },
                 function(response) {

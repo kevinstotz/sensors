@@ -1,3 +1,4 @@
+var config = require("./config");
 
 var _ = require("lodash");
 var express = require('express');
@@ -29,7 +30,6 @@ winston.log('info', 'Hello distributed log files!');
 winston.info('Hello again distributed logs');
 winston.level = 'debug';
 winston.log('debug', 'Now my debug messages are written to console!');
-
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.set('env', 'development');
@@ -82,9 +82,6 @@ app.use(function(err, req, res, next) {
     });
 });
 
-const ENGINE_URL = 'http://api.yogishouse.com:8000';
-const port = 8080;
-const hostname = '0.0.0.0';
-app.listen(port, hostname);
-console.log(`Running on http://${hostname}:${port}/`);
+app.listen(config.site_port, config.node_server_ip);
+console.log(`Running on http://${config.node_server_ip}:${config.site_port}/`);
 module.exports = app;
